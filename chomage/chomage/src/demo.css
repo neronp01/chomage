@@ -1,0 +1,49 @@
+.dline {
+	stroke-width: 0.5;
+	stroke: #000;
+}
+
+.p99,
+.p95,
+.p75,
+.p50,
+.p25,
+.p10 {
+	stroke-width: 2;
+}
+
+.p50 {
+	stroke: #3975bf;
+}
+
+.label {
+	text-anchor: start;
+	transform: translate(5px, 5px);
+}
+
+.income-line {
+	stroke-width: 2;
+	stroke: #F00;
+}
+
+.geo .x .tick text {
+	text-anchor: end;
+	transform: rotate(-45deg);
+}
+
+.sex .x .tick:first-of-type text {
+	text-anchor: start;
+}
+
+.sex .x .tick:last-child text {
+	text-anchor: end;
+}
+
+td.highlight {
+	background: yellow;
+	font-weight: bolder;
+}
+
+td.highlight:before {
+	content: "* ";
+}
