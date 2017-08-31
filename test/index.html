@@ -1,0 +1,433 @@
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/lodash.js"></script>
+    <script type="text/javascript" src="script/d3/d3.js"></script>
+  <script type="text/javascript" src="script/d3/d3.min.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script/myScript.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
+
+    <!-- <script src="DataTest.json" ></script> -->
+
+
+
+    <title>Visualisation</title>
+
+  </head>
+
+
+  <body bgcolor=white>
+
+    <script type="text/javascript">
+
+
+//        d3.json("en.json", function(data) {
+//            console.log(data);
+//        });
+
+var tab = ["eng",
+    "fra",
+    "alq",
+    "atj",
+    "zva",
+    "cre",
+    "crk",
+    "csw",
+    "cwd",
+    "moe",
+    "pqm",
+    "mic",
+    "nsk",
+    "zvc",
+    "zvr",
+    "bea",
+    "crx",
+    "clc",
+    "chp",
+    "zvd",
+    "kkz",
+    "scs",
+    "ttm",
+    "zve",
+    "sek",
+    "xsl",
+    "tce",
+    "tht",
+    "dgr",
+    "zvf",
+    "hai",
+    "ikt",
+    "iku",
+    "zvg",
+    "cay",
+    "moh",
+    "one",
+    "kut",
+    "crg",
+    "hur",
+    "lil",
+    "oka",
+    "shs",
+    "squ",
+    "str",
+    "thp",
+    "dak",
+    "sto",
+    "tli",
+    "zvh",
+    "ncg",
+    "tsi",
+    "has",
+    "hei",
+    "kwk",
+    "nuk",
+    "cat",
+    "ita",
+    "por",
+    "ron",
+    "spa",
+    "afr",
+    "dan",
+    "isl",
+    "nor",
+    "swe",
+    "nld",
+    "ofs",
+    "deu",
+    "yid",
+    "gla",
+    "cym",
+    "bel",
+    "bos",
+    "bul",
+    "hrv",
+    "ces",
+    "mkd",
+    "pol",
+    "rsl",
+    "srp",
+    "hbs",
+    "slk",
+    "slv",
+    "ukr",
+    "lav",
+    "lit",
+    "ell",
+    "hye",
+    "sqi",
+    "kat",
+    "est",
+    "fin",
+    "hun",
+    "aze",
+    "tur",
+    "mon",
+    "kab",
+    "orm",
+    "som",
+    "amh",
+    "ara",
+    "heb",
+    "mlt",
+    "zvi",
+    "ben",
+    "guj",
+    "hin",
+    "knn",
+    "mar",
+    "pan",
+    "snd",
+    "sin",
+    "urd",
+    "npi",
+    "kur",
+    "pus",
+    "fas",
+    "kan",
+    "mal",
+    "tam",
+    "tel",
+    "jpn",
+    "kor",
+    "zvj",
+    "zvk",
+    "zho",
+    "zvl",
+    "hak",
+    "cmn",
+    "zvn",
+    "mya",
+    "taw",
+    "lao",
+    "tha",
+    "khm",
+    "vie",
+    "bik",
+    "fij",
+    "zvo",
+    "mlg",
+    "zlm",
+    "zvp",
+    "pag",
+    "tgl",
+    "aka",
+    "lin",
+    "run",
+    "kin",
+    "sna",
+    "swh",
+    "lug",
+    "zvq",
+    "bin",
+    "ewe",
+    "gaa",
+    "ibo",
+    "wol",
+    "zvs",
+    "ase",
+    "fcs"];
+
+function test (data) {
+
+}
+
+
+
+
+
+//d3.text("DataL2.csv", function(text) {
+//
+//    var data = d3.csv.parseRows(text).map(function(row) {
+//        return row.map(function(value) {
+//            return +value;
+//        });
+//    });
+//    this.csv_data(data);
+//    console.log(data);
+//    var token=0;
+//
+//    var tab2 = [0,1,4,5,13,20,21,32,37,41,45,53,59,69,70,71,72,76,79,86,89,91,92,95,106,110,117,121,123,126,135,136,137,151,152,153,160,168,170,174,177,179,184,188,196,202,204,206,207,210]
+//var json1 = {};
+//   for(var i = 0; i<9917-211; i+=211){
+//       // console.log(data[i]);
+//      var tabGeo = data[i];
+//
+//       var keyT = tabGeo[0];
+//       var count = 0;
+//
+//       var json2 = {};
+//       var keyP = 0;
+//       var count2 = 0;
+//
+//       data.forEach(function (p1, p2, p3) {
+//
+//
+//           // if (token ===1){console.log(count,' ; ',tab2[count2]);}
+//           if (tab[keyP] !== undefined){
+//
+//               var key = tab[keyP];
+//
+//
+//
+//               if(p1[0] ===keyT ){
+//
+//                   //console.log("p1",p1[0],'p2',p1[1],count);
+//                   if(count === tab2[count2] ){
+//                       count2++;
+//
+//                       // console.log("test");
+//                   }else{
+//                       json2[key] = p1[1];
+//                       keyP++;
+//                       //console.log(count,' : ', json);
+//                   }
+//                   count++;
+//               }
+//           }
+//       });
+//       token++;
+//           json1[keyT] = json2;
+//
+//
+//
+//
+
+
+//   }
+
+//console.log(json1);
+//           treeData = JSON.parse( JSON.stringify(json1) );
+//           var url = 'data:text/json;charset=utf8,' + encodeURIComponent( JSON.stringify(treeData));
+//           window.open(url, '_blank');
+//           window.focus();
+
+
+
+//});
+
+var test = langData;
+function langData(){
+
+    var dataJason;
+
+
+    d3.json("en.json", function(data) {
+        dataJason = data;
+
+        // test (data);
+
+    });
+
+
+
+    d3.csv("LangData.csv", function(csv_data){
+        var dataTemp,
+            temp = dataJason.en.lang, //Cette variable enregistre tous les éléments dans dataJason en/lang{élément}
+            json1 = {},
+            geo = '001',
+            count=0, //Ceci est le compteur de region.
+            globCount=0, //Ceci est le compteur pour l'ensemble de ligne a enregistrer.
+            tab = [],
+            keyT; // Cette variable est pour enregistrer les regions
+        // Cette boucle incrémente les régions ex: en/lang{001:{},10:{},11:{}}
+        for(var i = 0; i<56327; i++){
+            var json2 = {};
+            if(geo===csv_data[i].GEOCODE){
+                count++;
+            }else{
+                tab.push(count);
+                geo = csv_data[i].GEOCODE;
+                count =1;
+            }
+        }
+
+        //Cette boucle incrémente tous les langue pour chaque région
+        for(var x=0; x<tab.length-1; x++){
+            keyT= csv_data[globCount].GEOCODE;
+            if(keyT!=="00"){
+                var json2 = {};
+                for(var y = 0; y<tab[x];y++){
+                    var temp2 = _.map(temp,function(value,key){
+                        if (value===csv_data[globCount].LanguageEN){ return dataTemp = key;}
+                    });
+                    if(dataTemp!== undefined){
+                        var keyLang = dataTemp;
+                        json2[keyLang] = parseInt(csv_data[globCount].TOTAL) ;
+                        globCount++;
+                    }
+                }
+                json1[keyT]=json2;
+            }else{
+                globCount++;}
+        }
+
+        treeData = JSON.parse( JSON.stringify(json1) );
+        var url = 'data:text/json;charset=utf8,' + encodeURIComponent( JSON.stringify(treeData));
+        window.open(url, '_blank');
+        window.focus();
+    })
+
+
+
+}
+
+
+
+
+
+
+// cette function est pour trouver tous les objets ayant des doublon dans un json file
+//d3.csv("LangData.csv", function(csv_data){
+//    var tab=[];
+//    var valLang='';
+//    var valGeo='';
+//    var tabVal='';
+//    count = 0;
+//    _.forEach(csv_data,function (elem) {
+//       // console.log(elem.LanguageEN);
+//        if(elem.LanguageEN === valLang && valGeo===elem.GEOCODE){
+//
+//            if (tabVal!==elem.GEOCODE){
+//                tab.push(elem.GEOCODE);
+//                tabVal=elem.GEOCODE;
+//            }
+//
+//        }else{
+//            valLang = elem.LanguageEN;
+//            valGeo =elem.GEOCODE;
+//        }
+//    })
+//    console.log(tab);
+//      console.log(_.filter(csv_data,{'GEOCODE':'11'}));
+//    treeData = JSON.parse( JSON.stringify(tab) );
+//           var url = 'data:text/json;charset=utf8,' + encodeURIComponent( JSON.stringify(treeData));
+//           window.open(url, '_blank');
+//           window.focus();
+//
+//});
+//function csv_data(data){
+//    var tab2 = [1,2,3,6,7,15,22,23,34,39,43,47,55,61,71,72,73,74,78,81,88,91,93,94,97,108,112,119,123,125,128,137,138,139,153,154,155,163,170,172,176,179,181,186,190,198,204,206,208,209,212]
+//           var p1 =0;
+//           var moin = 0;
+//           var json = {};
+//           var keyP = 0;
+//           var obj =[];  var p ,
+//               property, subObj;
+//           var q = 0;
+//           var token = 0;
+//           console.log(tab2.length);
+//           var csv_data = d3.nest()
+//               .key(function(a) { return a.Geo; })
+//               .rollup(function(values) {
+//
+//                   var obj =[];
+//
+//                   for (p = 1; p < 211; p++) {
+//
+//
+//
+//                       if(p===tab2[p1]){moin++;p1++;
+//                          // console.log(p);
+//                       }else{
+//                           var key = tab[keyP];
+//                        if (token  === 0 && p===4)   {console.log( values[p].Total, 'key=',key)};
+//                           json[key] = values[p].Total;
+//                       keyP++;
+//                       }
+//
+//
+//                     //  subObjtab[p] = parseFloat(values[p].Total, 10);
+//                   }
+//                   console.log(json);
+//                   obj.push(json);
+//                   p1 =0;
+//                   keyP=0;
+//                   token++;
+//                   return obj;
+//               })
+//                 .map(data);
+//
+//           console.log(csv_data);
+////           var test = JSON.stringify(csv_data);
+////           treeData = JSON.parse( test );
+////           var url = 'data:text/json;charset=utf8,' + encodeURIComponent( JSON.stringify(treeData));
+////           window.open(url, '_blank');
+////           window.focus();
+//
+//       }
+
+
+
+
+    </script>
+
+  </body>
+
+</html>
